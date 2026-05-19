@@ -8,6 +8,10 @@ One search, a glance at the snippets, a tidy answer. That's how AI research usua
 
 This skill treats the report as a draft and refines it with evidence until it stops being wrong. Every claim has a clickable source. Gaps are stated, not guessed.
 
+## What's TTD-DR
+
+TTD-DR is **Test-Time Diffusion Deep Researcher** — the technique this skill is built on. The idea: treat writing a report like image diffusion. You start with a noisy draft and "denoise" it in passes. Here, each pass is a round of targeted search, and the evidence is what removes the noise. The draft is wrong at first by design — every round just makes it less wrong. That's why drafting comes *before* searching, not after.
+
 ## How it works
 
 A 7-phase loop, capped at 3 search rounds:
