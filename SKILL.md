@@ -77,7 +77,14 @@ For each gap:
 Repeat Phases 5-6 if significant gaps remain. **Hard cap: 3 total search rounds.**
 
 ### PHASE 7: Finalize Report
-Use the output format below.
+
+**First — verify every citation (ported from the Research skill; this is the gate deep-research was missing).** Subagents and search tools hallucinate plausible-but-dead URLs. For each URL you're about to cite:
+1. `curl -s -o /dev/null -w "%{http_code}" -L "URL"` — must return 200 (not 404/403/500).
+2. WebFetch it and confirm the page content actually supports the claim you're citing it for.
+
+Drop any URL that fails either check. Never ship an unverified link — a single broken citation is a credibility-killer.
+
+Then use the output format below.
 
 ## Output Format
 
